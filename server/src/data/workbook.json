@@ -1,0 +1,344 @@
+[
+  {
+    "id": 1,
+    "category": "functional patterns",
+    "question": "What is a callback function?",
+    "answer": ""
+  },
+  {
+    "id": 2,
+    "category": "functional patterns",
+    "question": "What is ECMA script ? What is the difference between Javascript & ECMA script ?",
+    "answer": ""
+  },
+  {
+    "id": 3,
+    "category": "functional patterns",
+    "question": "What is the difference between `let` & `var` ?",
+    "answer": ""
+  },
+  {
+    "id": 4,
+    "category": "functional patterns",
+    "question": "Give a practical example where you would use the `reduce` function in javascript.",
+    "answer": ""
+  },
+  {
+    "id": 5,
+    "category": "functional patterns",
+    "question": "Give a practical example where you would use the `map` function in javascript.",
+    "answer": ""
+  },
+  {
+    "id": 6,
+    "category": "functional patterns",
+    "question": "Give a practical example where you would use the `filter` function in javascript.",
+    "answer": ""
+  },
+  {
+    "id": 7,
+    "category": "Web basics",
+    "question": "What is a web server?",
+    "answer": ""
+  },
+  {
+    "id": 8,
+    "category": "Web basics",
+    "question": "Explain the client-server architecture.",
+    "answer": ""
+  },
+  {
+    "id": 9,
+    "category": "Web basics",
+    "question": "What is the difference between synchronous and asynchronous execution?",
+    "answer": ""
+  },
+  {
+    "id": 10,
+    "category": "Web basics",
+    "question": "What is `npm`? Why is it useful?",
+    "answer": ""
+  },
+  {
+    "id": 11,
+    "category": "Web basics",
+    "question": "What would be the impact of javascript `fetch` if it was not asyncronous ?",
+    "answer": ""
+  },
+  {
+    "id": 12,
+    "category": "Web basics",
+    "question": "Why benefits would bring to a developer to use the `Postman` application ?",
+    "answer": ""
+  },
+  {
+    "id": 13,
+    "category": "Web basics",
+    "question": "List the parts of the URL.",
+    "answer": ""
+  },
+  {
+    "id": 14,
+    "category": "Web basics",
+    "question": "What is query parameter?",
+    "answer": ""
+  },
+  {
+    "id": 15,
+    "category": "Web basics",
+    "question": "What kind of HTTP status codes do you know?",
+    "answer": ""
+  },
+  {
+    "id": 16,
+    "category": "Web basics",
+    "question": "How does an HTTP Request look like? What are the most relevant HTTP header fields?",
+    "answer": ""
+  },
+  {
+    "id": 17,
+    "category": "Web basics",
+    "question": "How does an HTTP Response look like? What are the most relevant HTTP header fields?",
+    "answer": ""
+  },
+  {
+    "id": 18,
+    "category": "Web basics",
+    "question": "Why should you ignore the `node_modules` folder in `.gitignore` ?",
+    "answer": ""
+  },
+  {
+    "id": 19,
+    "category": "Rest API: Serve and Fetch",
+    "question": "In a REST API, what are the HTTP methods _GET_, _PUT_ and _DELETE_ used for? (replacement question for the question above)",
+    "answer": ""
+  },
+  {
+    "id": 20,
+    "category": "Rest API: Serve and Fetch",
+    "question": "How do you make a POST request from JavaScript? (replacement question for the question above)",
+    "answer": ""
+  },
+  {
+    "id": 21,
+    "category": "Rest API: Serve and Fetch",
+    "question": "What is an API?",
+    "answer": ""
+  },
+  {
+    "id": 22,
+    "category": "Rest API: Serve and Fetch",
+    "question": "What is REST API?",
+    "answer": ""
+  },
+  {
+    "id": 23,
+    "category": "Rest API: Serve and Fetch",
+    "question": "What is JSON and how do we use it?",
+    "answer": ""
+  },
+  {
+    "id": 24,
+    "category": "Rest API: Serve and Fetch",
+    "question": "What is API versioning ?",
+    "answer": ""
+  },
+  {
+    "id": 25,
+    "category": "Rest API: Serve and Fetch",
+    "question": "Give 3 examples of HTTP response status codes ? Explain what each number means.",
+    "answer": ""
+  },
+  {
+    "id": 26,
+    "category": "Advanced JavaScript",
+    "question": "How does the `ternary operator` looks like in javascript?",
+    "answer": ""
+  },
+  {
+    "id": 27,
+    "category": "Advanced JavaScript",
+    "question": "How to import a function from another module in JavaScript?",
+    "answer": ""
+  },
+  {
+    "id": 28,
+    "category": "Advanced JavaScript",
+    "question": "What is a shallow copy on an object?",
+    "answer": ""
+  },
+  {
+    "id": 29,
+    "category": "Advanced JavaScript",
+    "question": "What is a callback function? Tell some examples of its usage.",
+    "answer": ""
+  },
+  {
+    "id": 30,
+    "category": "Advanced JavaScript",
+    "question": "What is object destructuring in javascript?",
+    "answer": ""
+  },
+  {
+    "id": 31,
+    "category": "Advanced JavaScript",
+    "question": "What is array destructuring in javascript?",
+    "answer": ""
+  },
+  {
+    "id": 32,
+    "category": "Advanced JavaScript",
+    "question": "What is the spread operator in `js` ?",
+    "answer": ""
+  },
+  {
+    "id": 33,
+    "category": "Advanced JavaScript",
+    "question": "What are the differences between the `arrow` function and the regular `function`?",
+    "answer": ""
+  },
+  {
+    "id": 34,
+    "category": "Advanced JavaScript",
+    "question": "What is the `import` keyword used for?",
+    "answer": ""
+  },
+  {
+    "id": 35,
+    "category": "Advanced JavaScript",
+    "question": "What is the `require` used for?",
+    "answer": ""
+  },
+  {
+    "id": 36,
+    "category": "Advanced JavaScript",
+    "question": "What are template literals?",
+    "answer": ""
+  },
+  {
+    "id": 37,
+    "category": "React basics",
+    "question": "What benefits does it bring for a developer to use `components` (opposed of writing all the code in a single file) ?",
+    "answer": ""
+  },
+  {
+    "id": 38,
+    "category": "React basics",
+    "question": "What is the difference between Element and Component?",
+    "answer": ""
+  },
+  {
+    "id": 39,
+    "category": "React basics",
+    "question": "How do you pass values between components in `react`?",
+    "answer": ""
+  },
+  {
+    "id": 40,
+    "category": "React basics",
+    "question": "What is `key` prop?",
+    "answer": ""
+  },
+  {
+    "id": 41,
+    "category": "React basics",
+    "question": "How does a child component pass data to it's parent component ?",
+    "answer": ""
+  },
+  {
+    "id": 42,
+    "category": "React basics",
+    "question": "Write the code to create in JSX an unordered list from the array let names = [Mathew, John, Maverik]",
+    "answer": ""
+  },
+  {
+    "id": 43,
+    "category": "React basics",
+    "question": "Write the code to set the background color red of a div in JSX.",
+    "answer": ""
+  },
+  {
+    "id": 44,
+    "category": "React patterns",
+    "question": "When adding an item to an array in the state, why is it necessary to pass a new array to the setter function? (replacement question for the question above)",
+    "answer": ""
+  },
+  {
+    "id": 45,
+    "category": "React patterns",
+    "question": "Describe what techniques or tools you use to debug a react app.",
+    "answer": ""
+  },
+  {
+    "id": 46,
+    "category": "React patterns",
+    "question": "What is the difference between a react class component & a functional component ?",
+    "answer": ""
+  },
+  {
+    "id": 47,
+    "category": "React patterns",
+    "question": "What is conditional rendering in react ? Give an example.",
+    "answer": ""
+  },
+  {
+    "id": 48,
+    "category": "React patterns",
+    "question": "Why is there an infinite loop in this code",
+    "answer": ""
+  },
+  {
+    "id": 49,
+    "category": "React patterns",
+    "question": "Why is there an infinite loop in this code \nfunction App() {\n const [count, setCount] = useState(0); //initial value of this\n useEffect(() => {\n setCount((count) => count + 1); //increment this Hook\n }); //no dependency array.\n return (\n <div className='App'>\n <p> value of count: {count} </p>\n </div>\n );\n}",
+    "answer": ""
+  },
+  {
+    "id": 50,
+    "category": "Mongo & mongoose",
+    "question": "What is a database schema ?",
+    "answer": ""
+  },
+  {
+    "id": 51,
+    "category": "Mongo & mongoose",
+    "question": "Write the code to store the object {name: Andrew, age: 10} to a mongo database. You can ignore the part of connection parameters.",
+    "answer": ""
+  },
+  {
+    "id": 52,
+    "category": "Mongo & mongoose",
+    "question": "Write the code to delete from a mongo database all employees that are over 18 years. The scheme for an employee is {name: string, age: int}. You can ignore the part of connection parameters.",
+    "answer": ""
+  },
+  {
+    "id": 53,
+    "category": "Mongo & mongoose",
+    "question": "Write the code to display in the console from a mongo database the employees who are over 18 years. The scheme for an employee is {name: string, age: int}. You can ignore the part of connection parameters.",
+    "answer": ""
+  },
+  {
+    "id": 54,
+    "category": "Mongo & mongoose",
+    "question": "Write the code to update from a mongo database the employees with name='John' and set the new age to 8. The scheme for an employee is {name: string, age: int}. You can ignore the part of connection parameters.",
+    "answer": ""
+  },
+  {
+    "id": 55,
+    "category": "MERN stack",
+    "question": "What is routing in the context of a react app ?",
+    "answer": ""
+  },
+  {
+    "id": 56,
+    "category": "MERN stack",
+    "question": "What is routing in the context of an express app ?",
+    "answer": ""
+  },
+  {
+    "id": 57,
+    "category": "MERN stack",
+    "question": "What is `CORS` policy ?",
+    "answer": ""
+  }
+]
