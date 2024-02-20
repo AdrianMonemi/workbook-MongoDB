@@ -16,10 +16,15 @@ if (!MONGO_URL) {
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use("api/FAQ", router);
+app.use("/api/FAQ", router);
+
+let isConnectedToDB = false;
 
 const main = async () => {
-  await mongoose.connect(MONGO_URL);
+  if (!isConnectedToDB) {
+    await mongoose.connect(MONGO_URL);
+    isConnectedToDB = true;
+  }
 
   app.listen(PORT, () => {
     console.log(`App is listening on ${PORT}`);

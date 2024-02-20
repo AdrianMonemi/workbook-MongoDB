@@ -8,4 +8,5 @@ const FAQEntrySchema = new Schema({
   answer: String
 });
 
-export const FAQEntry = model('FAQEntry', FAQEntrySchema);
+const FAQEntryModel = model('FAQEntry', FAQEntrySchema);
+export default FAQEntryModel;
