@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
     return res.status(500).json({ message: "Internal Server Error" });
   }
 });
-
+/* >>>>>>>> this function is only for create a new collection in MongoDB from json-datas <<<<<<<<<
 const saveDataFromJsonFile = async (jsonData) => {
   try {
     await FAQEntryModel.deleteMany({});
@@ -37,7 +37,7 @@ const saveDataFromJsonFile = async (jsonData) => {
   }
 };
 
-saveDataFromJsonFile(workbookData);
+saveDataFromJsonFile(workbookData);*/
 
 /*const createFAQ = async (req, res) => {
   try {
@@ -58,5 +58,22 @@ saveDataFromJsonFile(workbookData);
 };
 
 router.post("/create", createFAQ);*/
+
+router.get("/datas", async (req, res) => {
+  try {
+    let questionsData = await FAQEntryModel.find();
+    if (questionsData === null || !questionsData || questionsData.length === 0) {
+			res.status(404).json({ error: 'No data found' });
+		} else {
+      //  const questions = questionsData.map(entry => entry.question);
+      //  const id = questionsData.map(entry => entry.id)
+      const questions = questionsData.map(entry => ([ entry.id, entry.question, entry.answer ]));
+			res.json({questions});
+		}
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 export default router;

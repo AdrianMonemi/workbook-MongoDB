@@ -5,7 +5,7 @@ import router from "./src/routes/router.js";
 import cors from "cors";
 
 dotenv.config();
-
+console.log("Environment Variables:", process.env);
 const { MONGO_URL, PORT = 8080 } = process.env;
 
 if (!MONGO_URL) {
