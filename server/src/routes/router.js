@@ -26,21 +26,20 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/import", async (req, res) => {
+const saveDataFromJsonFile = async (jsonData) => {
   try {
     await FAQEntryModel.deleteMany({});
-    await FAQEntryModel.insertMany(workbookData);
-    console.log("Workbook data imported successfully into the database.");
-    return res
-      .status(201)
-      .json({ message: "Workbook data imported successfully" });
+    const insertedData = await FAQEntryModel.insertMany(jsonData);
+    console.log("Workbook data imported successfully into the database.", insertedData);
   } catch (error) {
     console.error("Error importing workbook data into the database:", error);
     return res.status(500).json({ message: "Internal Server Error" });
   }
-});
+};
 
-const createFAQ = async (req, res) => {
+saveDataFromJsonFile(workbookData);
+
+/*const createFAQ = async (req, res) => {
   try {
     console.log(req.body);
     const { id, category, question, answer } = req.body;
@@ -58,6 +57,6 @@ const createFAQ = async (req, res) => {
   }
 };
 
-router.post("/create", createFAQ);
+router.post("/create", createFAQ);*/
 
 export default router;
