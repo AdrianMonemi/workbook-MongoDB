@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const FAQ = await FAQEntryModel.find().sort({ created: "desc" });
-    console.log(FAQ);
+    //console.log(FAQ);
     return res.json(FAQ);
   } catch (error) {
     console.error("Error fetching FAQ entries:", error);
@@ -67,13 +67,22 @@ router.get("/datas", async (req, res) => {
 		} else {
       //  const questions = questionsData.map(entry => entry.question);
       //  const id = questionsData.map(entry => entry.id)
-      const questions = questionsData.map(entry => ([ entry.id, entry.question, entry.answer ]));
+      const questions = questionsData.map(entry => ([ entry.id, entry.question, entry.answer, entry.category ]));
 			res.json({questions});
 		}
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
+});
+
+router.patch('/sendAnswer', async (req, res) => {
+  try{
+    console.log(req.body);
+  } catch (error){
+    console.error(error);
+  }
+
 });
 
 export default router;
