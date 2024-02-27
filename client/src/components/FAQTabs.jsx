@@ -47,7 +47,7 @@ function FAQTabs() {
             {faqData
               .filter((entry) => entry.category === category)
               .map((entry) => (
-                <div key={entry._id}>
+                <div key={entry._id} className="container">
                   <div key={entry._id} className="questions">
                     <div className="entryId">{entry.id}</div>
                     <div className="questionDiv">

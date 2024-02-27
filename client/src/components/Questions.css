@@ -6,3 +6,8 @@
   width: 500px;
   height: 300px;
 }
+
+textarea{
+  border-end-end-radius: 25px;
+  border-top-left-radius: 25px;
+}
