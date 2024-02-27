@@ -14,11 +14,8 @@ function FAQTabs() {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        console.log(data);
         if (Array.isArray(data) && data.length > 0) {
           setFaqData(data);
-          categoriesExtract();
-          console.log(categories);
         } else {
           console.error("FAQ data is empty or not in expected format");
         }
@@ -26,37 +23,42 @@ function FAQTabs() {
         console.error("Error fetching FAQ data:", error);
       }
     };
-  
+
     fetchData();
   }, []);
-  
 
   const categoriesExtract = () => {
-    const extractedCategories = faqData.map(entry => entry.category);
+    const extractedCategories = faqData.map((entry) => entry.category);
     const uniqueCategories = [...new Set(extractedCategories)];
     setCategories(uniqueCategories);
   };
 
-  console.log(categories);
-  
-
+  useEffect(() => {
+    categoriesExtract();
+  }, [faqData]);
 
   return (
     <div>
       <div className="tabs">
         {categories.map((category) => (
-          <div key={category} className="categoryTitels">
-            {category}
+          <div key={category}>
+            <div className="categoryTitels">{category}</div>
+
             {faqData
               .filter((entry) => entry.category === category)
               .map((entry) => (
-                <div key={entry._id} className="questions">
-                  <ul>
-                    <li key={entry.id}>
-                      <div>Frage: {entry.question}</div>
-                      <div>Antwort: {entry.answer} <Questions props={faqData} /></div>
-                    </li>
-                  </ul>
+                <div key={entry._id}>
+                  <div key={entry._id} className="questions">
+                    <div className="entryId">{entry.id}</div>
+                    <div className="questionDiv">
+                      <div className="question">Question:</div>
+                      <div className="questionTitle">{entry.question}</div>
+                    </div>
+                  </div>
+                  <div className="inputDiv">
+                    <div className="answerDiv">Answer:</div>
+                    <Questions props={faqData} />
+                  </div>
                 </div>
               ))}
           </div>
@@ -64,7 +66,6 @@ function FAQTabs() {
       </div>
     </div>
   );
-  
 }
 
 export default FAQTabs;

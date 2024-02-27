@@ -1,3 +1,41 @@
-.categoryTitels{
+.categoryTitels {
   background-color: rgb(181, 187, 153);
+  margin-bottom: 20px;
+  padding: 10px;
 }
+
+Ul {
+  list-style-type: lower-roman;
+}
+
+li {
+  list-style-type: none;
+}
+
+.questions {
+  display: flex;
+  flex-direction: row;
+}
+.entryId {
+  margin-right: 10px;
+}
+
+.questionDiv {
+  display: flex;
+  flex-direction: row;
+  margin-right: 15px;
+}
+
+.question{
+  margin-right: 10px;
+}
+
+.answerDiv {
+  flex-direction: row;
+  margin: 15px ;
+}
+
+.inputDiv {
+  margin-bottom: 100px;
+}
+

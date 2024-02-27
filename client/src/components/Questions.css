@@ -1,3 +1,8 @@
 .answerField{
   background-color: rgb(189, 173, 203);
 }
+
+.answerField{
+  width: 500px;
+  height: 300px;
+}
