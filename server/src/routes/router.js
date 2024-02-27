@@ -77,12 +77,24 @@ router.get("/datas", async (req, res) => {
 });
 
 router.patch('/sendAnswer', async (req, res) => {
-  try{
-    console.log(req.body);
-  } catch (error){
-    console.error(error);
-  }
+  try {
+    const { id, answer } = req.body;
 
+    const faqEntry = await FAQEntryModel.findOne({ id });
+
+    if (!faqEntry || faqEntry.length === 0) {
+      return res.status(404).json({ error: 'FAQ entry not found' });
+    }
+
+    faqEntry.answer = answer;
+
+    await faqEntry.save();
+
+    return res.status(200).json({ message: 'Answer updated successfully' });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 export default router;
