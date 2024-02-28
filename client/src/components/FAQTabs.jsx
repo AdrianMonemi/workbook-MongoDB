@@ -39,9 +39,7 @@ function FAQTabs() {
     categoriesExtract();
   }, [faqData]);
 
-  const onClickHandle = (e, id) => {
-    console.log(id);
-  };
+ 
 
   return (
     <div>
@@ -63,11 +61,8 @@ function FAQTabs() {
                   </div>
                   <div className="inputDiv">
                     <div className="answerDiv">Answer:</div>
-                    <Questions />
-                    <Button
-                      onClick={(e) => onClickHandle(e, entry.id)}
-                      buttonText={"submit"}
-                    ></Button>
+                    <Questions id={entry.id}/>
+                    
                   </div>
                 </div>
               ))}
