@@ -1,14 +1,23 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Questions.css";
+import Button from "./Button";
 
-function Questions({props}){
+function Questions({ props }) {
+  const [textareaValue, setTextareaValue] = useState("");
 
-  return(
+  const handleChange = (e) => {
+    setTextareaValue(e.target.value);
+  };
+
+  return (
     <div>
       <form>
-        <textarea className="answerField">{props.answer}</textarea>
+        <textarea
+          className="answerField"
+          value={textareaValue}
+          onChange={handleChange}
+        />
       </form>
-      
     </div>
   );
 }

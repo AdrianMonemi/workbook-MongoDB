@@ -1,11 +1,12 @@
-import React, {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./Button.css";
 
-function Button({}) {
-
-  return(
+function Button({ onClick, buttonText }) {
+  return (
     <div>
-      <button type="submit" onClick={}></button>
+      <button type="submit" onClick={onClick}>
+        {buttonText}
+      </button>
     </div>
   );
 }

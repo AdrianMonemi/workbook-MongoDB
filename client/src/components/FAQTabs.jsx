@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./FAQTabs.css";
 import Questions from "./Questions";
+import Button from "./Button";
 
 function FAQTabs() {
   const [faqData, setFaqData] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [textareaValue, setTextareaValue] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +39,10 @@ function FAQTabs() {
     categoriesExtract();
   }, [faqData]);
 
+  const onClickHandle = (e, id) => {
+    console.log(id);
+  };
+
   return (
     <div>
       <div className="tabs">
@@ -57,7 +63,11 @@ function FAQTabs() {
                   </div>
                   <div className="inputDiv">
                     <div className="answerDiv">Answer:</div>
-                    <Questions props={faqData} />
+                    <Questions />
+                    <Button
+                      onClick={(e) => onClickHandle(e, entry.id)}
+                      buttonText={"submit"}
+                    ></Button>
                   </div>
                 </div>
               ))}
