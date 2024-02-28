@@ -39,7 +39,8 @@ function FAQTabs() {
     categoriesExtract();
   }, [faqData]);
 
- 
+ console.log(faqData);
+ console.log(categories);
 
   return (
     <div>
@@ -61,8 +62,7 @@ function FAQTabs() {
                   </div>
                   <div className="inputDiv">
                     <div className="answerDiv">Answer:</div>
-                    <Questions id={entry.id}/>
-                    
+                    <Questions id={entry._id}/>
                   </div>
                 </div>
               ))}

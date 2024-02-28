@@ -78,9 +78,9 @@ router.get("/datas", async (req, res) => {
 
 router.patch('/sendAnswer', async (req, res) => {
   try {
-    const { id, answer } = req.body;
+    const { _id, answer } = req.body;
 
-    const faqEntry = await FAQEntryModel.findOne({ id });
+    const faqEntry = await FAQEntryModel.findOne({ _id });
 
     if (!faqEntry || faqEntry.length === 0) {
       return res.status(404).json({ error: 'FAQ entry not found' });

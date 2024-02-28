@@ -9,8 +9,30 @@ function Questions({ id }) {
     setTextareaValue(e.target.value);
   };
 
-  const submitOnClickHandle = (e, id) => {
-    console.log(id);
+  const submitOnClickHandle = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/FAQ/sendAnswer', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          _id: id,
+          answer: textareaValue,
+        }),
+      });
+      console.log(textareaValue);
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(responseData.error || 'Failed to submit answer');
+      }
+
+      console.log('Answer submitted successfully');
+
+    } catch (error) {
+      console.error('Error submitting answer:', error.message);
+    }
   };
 
   return (
@@ -22,7 +44,7 @@ function Questions({ id }) {
           onChange={handleChange}
         />
         <Button
-          onClick={(e) => submitOnClickHandle(e, id)}
+          onClick={submitOnClickHandle}
           buttonText={"submit"}
         ></Button>
       
