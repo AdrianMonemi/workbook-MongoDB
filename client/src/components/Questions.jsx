@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Questions.css";
 import Button from "./Button";
 
-function Questions({ id }) {
+function Questions({ id, loadedAnswer, getAnswer }) {
   const [textareaValue, setTextareaValue] = useState("");
+  const [textAreaActive, setTextAreaActive] = useState(false);
 
   const handleChange = (e) => {
     setTextareaValue(e.target.value);
@@ -11,10 +12,12 @@ function Questions({ id }) {
 
   const submitOnClickHandle = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/FAQ/sendAnswer', {
-        method: 'PATCH',
+      setTextAreaActive(false);
+      getAnswer();
+      const response = await fetch("http://localhost:8080/api/FAQ/sendAnswer", {
+        method: "PATCH",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           _id: id,
@@ -22,32 +25,41 @@ function Questions({ id }) {
         }),
       });
       console.log(textareaValue);
+
+      console.log(textAreaActive);
       const responseData = await response.json();
 
       if (!response.ok) {
-        throw new Error(responseData.error || 'Failed to submit answer');
+        throw new Error(responseData.error || "Failed to submit answer");
       }
 
-      console.log('Answer submitted successfully');
-
+      console.log("Answer submitted successfully");
     } catch (error) {
-      console.error('Error submitting answer:', error.message);
+      console.error("Error submitting answer:", error.message);
     }
+  };
+
+  const editAnswerOnClickHandle = () => {
+    setTextAreaActive(true);
+    console.log(textAreaActive);
   };
 
   return (
     <div>
-      
-        <textarea
-          className="answerField"
-          value={textareaValue}
-          onChange={handleChange}
-        />
-        <Button
-          onClick={submitOnClickHandle}
-          buttonText={"submit"}
-        ></Button>
-      
+      {textAreaActive && <textarea
+        className="answerField"
+        value={textareaValue}
+        onChange={handleChange}
+      />}
+
+      {!textAreaActive && <p>{loadedAnswer}</p>}
+
+      <Button onClick={submitOnClickHandle} buttonText={"submit"}></Button>
+
+      <Button
+        onClick={editAnswerOnClickHandle}
+        buttonText={"edit answer"}
+      ></Button>
     </div>
   );
 }

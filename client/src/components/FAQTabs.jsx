@@ -7,6 +7,7 @@ function FAQTabs() {
   const [faqData, setFaqData] = useState([]);
   const [categories, setCategories] = useState([]);
   const [textareaValue, setTextareaValue] = useState("");
+  const [answerValue, setAnswerValue] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,8 +40,13 @@ function FAQTabs() {
     categoriesExtract();
   }, [faqData]);
 
- console.log(faqData);
- console.log(categories);
+  const getAnswer = (entry) => {
+    setAnswerValue(entry.answer);
+  }
+
+  useEffect(() => {
+    getAnswer();
+  }, []);
 
   return (
     <div>
@@ -62,7 +68,7 @@ function FAQTabs() {
                   </div>
                   <div className="inputDiv">
                     <div className="answerDiv">Answer:</div>
-                    <Questions id={entry._id}/>
+                    <Questions id={entry._id} loadedAnswer = {answerValue} getAnswer = {getAnswer}/>
                   </div>
                 </div>
               ))}
